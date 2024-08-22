@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download File</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h2 {
+            color: #1e90ff;
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #4caf50;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 5px 0;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Download File</h2>
+    {% for filename in files %}
+    <a href="{{ url_for('download_file', filename=filename) }}">{{ filename }}</a><br />
+    {% endfor %}
+</body>
+</html>
